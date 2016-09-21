@@ -1,0 +1,32 @@
+﻿@using Rock.Business.Models;
+@model LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div>
+            用户名：
+            @Html.EditorFor(d => d.UserName)
+        </div>
+        <div>
+            密码：
+            @Html.EditorFor(d => d.Password)
+        </div>
+        <div>
+            @Html.CheckBoxFor(d => d.IsKeepLogin)是否记住登录？
+        </div>
+        <input type="submit" value="登录" />
+    }
+
+</body>
+</html>

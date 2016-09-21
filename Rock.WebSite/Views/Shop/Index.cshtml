@@ -1,0 +1,30 @@
+﻿@model Dictionary<string, string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        Shop page:
+        <br />
+        @{
+            if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div>
+                        @(item.Key) - @(item.Value)
+                    </div>
+                }
+            }
+        }
+    </div>
+</body>
+</html>
