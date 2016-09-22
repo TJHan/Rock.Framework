@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Rock.Business.Filters
 {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class AuthAttribute : AuthorizeAttribute
     {
         protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)

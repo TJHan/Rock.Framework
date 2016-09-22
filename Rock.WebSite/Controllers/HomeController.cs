@@ -8,10 +8,9 @@ namespace Rock.WebSite.Controllers
 {
     public class HomeController : Controller
     {
-        [OutputCache(VaryByParam = "", Duration = 3600, Location = System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult Index()
         {
-            return View();
+            return new Infrastructure.CustomResult() { Url = "/Login/Index" };
         }
 
         public ActionResult About()
@@ -23,8 +22,7 @@ namespace Rock.WebSite.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Message = "Your contact page.";            
             return View();
         }
     }

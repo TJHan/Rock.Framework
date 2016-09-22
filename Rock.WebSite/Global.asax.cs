@@ -26,5 +26,21 @@ namespace Rock.WebSite
         {
             log4net.Config.XmlConfigurator.Configure();
         }
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception error = Server.GetLastError();
+            if (error != null)
+            {
+                int errorCode = error.GetHashCode();
+                switch (errorCode)
+                {
+                    case 404:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Response.Redirect("~/Error/404.html");
+        }
     }
 }

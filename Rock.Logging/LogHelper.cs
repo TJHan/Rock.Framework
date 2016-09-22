@@ -7,6 +7,10 @@ using log4net;
 
 namespace Rock.Logging
 {
+    /// <summary>
+    /// 日志助手类
+    /// </summary>
+    /// <typeparam name="T">异常产生的位置，即类型</typeparam>
     public class LogHelper<T>
     {
         static ILog log = LogManager.GetLogger(typeof(T));
